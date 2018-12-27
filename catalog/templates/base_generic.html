@@ -12,27 +12,28 @@
 
     <body>
 
-        <!-- Wrapper -->
-	        <div id="wrapper">
+      <!-- Wrapper -->
+	      <div id="wrapper">
             
 				<!-- Header -->
 					<header id="header">
 						<span class="avatar"><img src="{% static 'images/avatar.jpg' %}" alt="" /></span>
 						<h1>This is my <strong>SpaceLibrary</strong>, a library that gives you a feelings of space. Seriously! I am joking.</h1>
-                        {% block sidebar %}
+            {% block sidebar %}
 						<ul class="icons">
-							<li><a href="{% url 'catalog:index' %}" class="icon style2 fa-twitter"><span class="label">Home</span></a></li>
-							<li><a href="{% url 'catalog:books' %}" class="icon style2 fa-facebook"><span class="label">All Books</span></a></li>
-							<li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
-							<li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+							<li><a href="{% url 'catalog:index' %}" ><span class="label">Home</span></a></li>
+							<li><a href="{% url 'catalog:books' %}" ><span class="label">All Books</span></a></li>
+							<li><a href="#" ><span class="label">Author</span></a></li>
+							<li><a href="#" ><span class="label">Genre</span></a></li>
+							<li><a href="#" ><span class="label">Language</span></a></li>
 						</ul>
-                        {% endblock %}
+            {% endblock %}
 					</header>
-                <!-- Main -->
+<!--
+          
 					<section id="main">
-
-						<!-- Thumbnails -->
+						{% block content_post %}
+						
 							<section class="thumbnails">
 								<div>
 									<a href="{% static 'images/fulls/01.jpg' %}">
@@ -69,11 +70,12 @@
 									</a>
 								</div>
 							</section>
+						{% endblock %}
+					</section>  
+-->          
+        </div>
 
-					</section>            
-            </div>
-
-            <script src="{% static 'js/jquery.min.js' %}"></script>
+      <script src="{% static 'js/jquery.min.js' %}"></script>
 			<script src="{% static 'js/jquery.poptrox.min.js' %}"></script>
 			<script src="{% static 'js/skel.min.js' %}"></script>
 			<script src="{% static 'js/main.js' %}"></script>
