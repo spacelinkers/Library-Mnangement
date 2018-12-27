@@ -29,7 +29,21 @@ class BookListView(generic.ListView):
         return Book.objects.order_by('title')[:5]
     
     templates_name = 'catalog/book_list.html'
+    paginate_by = 10
+
 
 class BookDetailView(generic.DetailView):
     model = Book
-    paginate_by = 5
+
+class AuthorListView(generic.ListView):
+    model = Author
+    context_object_name = 'author_list'
+
+    def get_queryset(self):
+        return Author.objects.order_by('first_name')[:5]
+    
+    templates_name = 'catalog/author_list.html'
+    paginate_by = 10
+
+class AuthorDetailView(generic.DetailView):
+    model = Author
